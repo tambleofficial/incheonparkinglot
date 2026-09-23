@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="blog-title" content="{{TITLE}}">
+<meta name="blog-description" content="{{DESCRIPTION}}">
+<meta name="blog-date" content="{{DATE}}">
+<meta name="blog-category" content="{{CATEGORY}}">
+<meta name="description" content="{{DESCRIPTION}}">
+<title>{{TITLE}} | 파킹라인</title><style>
+:root{--navy:#10233d;--navy2:#1b3659;--blue:#2b5a86;--ink:#182333;--muted:#657487;--line:#dde5ec;--bg:#f5f7fa;--white:#fff;--sand:#b89b6b;--shadow:0 18px 48px rgba(16,35,61,.08);--max:1120px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",Arial,sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.inner{width:min(var(--max),calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,35,61,.08)}.head{height:78px;display:flex;align-items:center;justify-content:space-between;gap:26px}.brand{font-size:25px;font-weight:900;letter-spacing:-.05em;color:var(--navy);display:flex;align-items:center;gap:10px}.mark{width:39px;height:39px;border-radius:13px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:900}.nav{display:flex;gap:24px;font-weight:700;font-size:14px;color:#405168}.nav a.on{color:var(--blue)}
+.hero{padding:62px 0 50px;background:linear-gradient(180deg,#f9fbfd,#edf3f7)}.eyebrow{font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--blue);text-transform:uppercase}.hero h1{margin:12px 0 14px;font-size:clamp(38px,5.5vw,60px);line-height:1.08;letter-spacing:-.05em;color:var(--navy)}.hero p{margin:0;color:var(--muted);font-size:17px;max-width:720px}
+main{padding:54px 0 90px}.post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.post-card{display:flex;flex-direction:column;min-height:260px;padding:24px;border-radius:22px;background:#fff;border:1px solid var(--line);box-shadow:0 8px 22px rgba(16,35,61,.04)}.post-meta{font-size:12px;font-weight:800;color:var(--blue);letter-spacing:.04em}.post-card h2{margin:10px 0 10px;font-size:22px;line-height:1.35;letter-spacing:-.03em;color:var(--navy)}.post-card p{margin:0;color:var(--muted);font-size:14px}.post-card .more{margin-top:auto;padding-top:18px;font-weight:800;color:var(--navy)}.empty{padding:42px;border-radius:22px;background:#fff;border:1px dashed #cbd5df;color:var(--muted);text-align:center;grid-column:1/-1}
+.article-wrap{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:34px;align-items:start}.article{background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(26px,5vw,54px);box-shadow:var(--shadow)}.article .meta{font-size:13px;color:var(--blue);font-weight:800}.article h1{margin:10px 0 16px;font-size:clamp(34px,4.5vw,52px);line-height:1.14;letter-spacing:-.045em;color:var(--navy)}.article .desc{font-size:18px;color:var(--muted);padding-bottom:24px;border-bottom:1px solid var(--line)}.article h2{margin:40px 0 12px;font-size:28px;letter-spacing:-.035em;color:var(--navy)}.article h3{margin:28px 0 8px;font-size:21px;color:var(--navy)}.article p{margin:0 0 18px}.article ul{padding-left:22px}.note{padding:18px 20px;border-radius:16px;background:#f0f4f7;color:#405168;margin:22px 0}.side{position:sticky;top:98px;display:grid;gap:14px}.sidebox{padding:20px;border-radius:20px;background:#fff;border:1px solid var(--line)}.sidebox strong{display:block;color:var(--navy);margin-bottom:7px}.sidebox p{font-size:13px;color:var(--muted);margin:0}.cta{display:block;text-align:center;padding:13px;border-radius:13px;background:var(--navy);color:#fff;font-weight:800;margin-top:12px}
+footer{background:#0d1d32;color:#cbd5e2;padding:38px 0 110px;font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer-row strong{color:#fff}.quick{position:fixed;left:50%;bottom:12px;transform:translateX(-50%);width:min(680px,calc(100% - 24px));padding:9px;background:rgba(13,29,50,.96);border-radius:19px;box-shadow:0 18px 50px rgba(5,16,30,.28);display:grid;grid-template-columns:1fr auto;gap:9px;z-index:60}.quick a:first-child{padding:8px 12px;color:#fff}.quick small{display:block;color:#aebdd0;font-size:10px}.quick strong{font-size:18px}.quick .reserve{display:flex;align-items:center;padding:0 16px;border-radius:12px;background:#fff;color:var(--navy);font-weight:900}
+@media(max-width:900px){.post-grid{grid-template-columns:1fr 1fr}.article-wrap{grid-template-columns:1fr}.side{position:static}.nav{display:none}}
+@media(max-width:650px){.inner{width:min(var(--max),calc(100% - 28px))}.post-grid{grid-template-columns:1fr}.hero{padding:42px 0 34px}.article{padding:25px}.quick{left:8px;right:8px;width:auto;transform:none}.quick strong{font-size:16px}}
+</style></head>
+<body><header><div class="inner head"><a class="brand" href="../../index.html"><span class="mark">P</span><span>파킹라인</span></a><nav class="nav"><a href="../../intro.html">주차장소개</a><a href="../../guide.html">이용안내</a><a href="../../reservation.html">온라인예약</a><a href="../../facility.html">주차장시설</a><a href="../../support.html">고객지원</a><a href="../../blog/index.html" class="on">주차정보</a></nav></div></header>
+<section class="hero"><div class="inner"><div class="eyebrow">Parkingline Blog</div><h1>{{TITLE}}</h1><p>{{DESCRIPTION}}</p></div></section>
+<main><div class="inner article-wrap">
+<article class="article">
+<div class="meta">{{CATEGORY}} · {{DATE}}</div>
+<h1>{{TITLE}}</h1>
+<p class="desc">{{DESCRIPTION}}</p>
+
+<!-- 아래부터 글 본문을 작성하세요. -->
+<h2>첫 번째 소제목</h2>
+<p>여기에 본문을 작성하세요. 한 문단은 너무 길지 않게 나누는 것이 읽기 좋습니다.</p>
+
+<div class="note">중요한 안내나 체크사항은 이런 박스로 정리할 수 있습니다.</div>
+
+<h2>두 번째 소제목</h2>
+<p>필요하면 목록도 사용할 수 있습니다.</p>
+<ul>
+  <li>체크사항 1</li>
+  <li>체크사항 2</li>
+  <li>체크사항 3</li>
+</ul>
+
+<h2>마무리</h2>
+<p>글의 핵심 내용을 정리하고 예약 또는 이용안내 페이지로 자연스럽게 연결하세요.</p>
+</article>
+<aside class="side">
+  <div class="sidebox"><strong>파킹라인 예약문의</strong><p>출국 일정과 차량정보를 준비해 문의해 주세요.</p><a class="cta" href="../../reservation.html">온라인 예약</a></div>
+  <div class="sidebox"><strong>이용 전 확인</strong><p>실제 요금과 운영사항은 예약 전에 최신 안내를 확인해 주세요.</p></div>
+</aside>
+</div></main>
+<footer><div class="inner footer-row"><div><strong>파킹라인</strong><div>인천공항 주차대행 · 실내주차 안내</div></div><div>예약/문의 010-4369-0000</div></div></footer><div class="quick"><a href="tel:01043690000"><small>예약 · 이용문의</small><strong>010-4369-0000</strong></a><a class="reserve" href="../../reservation.html">온라인 예약</a></div></body></html>

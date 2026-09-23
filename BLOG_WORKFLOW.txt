@@ -1,0 +1,10 @@
+새 글 작성 예시
+
+npm install
+npm run new:post -- airport-parking-checklist "인천공항 주차대행 이용 전 체크리스트"
+
+생성되는 파일:
+public/blog/airport-parking-checklist/index.html
+
+내용 수정 → git add/commit/push
+Cloudflare Workers Builds가 자동으로 배포합니다.

@@ -1,0 +1,14 @@
+{
+  "name": "parkingline-workers-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-blog.mjs",
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "new:post": "node scripts/new-post.mjs"
+  },
+  "devDependencies": {
+    "wrangler": "^4.136.0"
+  }
+}
