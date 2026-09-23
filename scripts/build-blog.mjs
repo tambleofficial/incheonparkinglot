@@ -48,6 +48,21 @@ const cards = posts.length
 
 await writeFile(join(blogDir, "index.html"), indexTemplate.replace("{{POST_CARDS}}", cards), "utf8");
 
+
+// Production canonical/og:url injection for blog posts when SITE_URL is configured.
+const configuredSiteUrl = (process.env.SITE_URL || "").replace(/\/+$/, "");
+if (configuredSiteUrl) {
+  for (const p of posts) {
+    const postFile = join(blogDir, p.slug, "index.html");
+    let postHtml = await readFile(postFile, "utf8");
+    const canonicalUrl = `${configuredSiteUrl}/blog/${p.slug}/`;
+    postHtml = postHtml.replace(/<link rel=["']canonical["'][^>]*>/gi, "");
+    postHtml = postHtml.replace(/<meta property=["']og:url["'][^>]*>/gi, "");
+    postHtml = postHtml.replace("</title>", `</title><link rel="canonical" href="${canonicalUrl}"><meta property="og:url" content="${canonicalUrl}">`);
+    await writeFile(postFile, postHtml, "utf8");
+  }
+}
+
 // Optional sitemap. Set SITE_URL in Cloudflare build variables for production.
 const siteUrl = (process.env.SITE_URL || "").replace(/\/+$/, "");
 async function walk(dir) {
